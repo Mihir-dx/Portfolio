@@ -1,0 +1,9 @@
+Recommended Test Order (One By One)
+
+Theme + color system + fonts.
+Hero redesign.
+Project card redesign.
+Navigation polish.
+Motion/section reveal.
+Background texture layers.
+Copy rewrite pass.

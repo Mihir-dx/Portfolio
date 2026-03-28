@@ -1,0 +1,330 @@
+﻿@import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@400;500;600;700&family=Rajdhani:wght@500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(0 0% 5%);
+  border-left: 1px solid hsl(0 0% 12%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(0 0% 20%);
+  border: 2px solid hsl(0 0% 5%);
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(24 100% 50%);
+}
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Black Ops 6 HUD Theme */
+    --background: 0 0% 2%; 
+    --foreground: 0 0% 95%;
+
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 90%;
+
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 90%;
+
+    /* BO6 Signature Orange */
+    --primary: 24 100% 50%;
+    --primary-foreground: 0 0% 5%;
+
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+
+    /* Bright amber/orange for accents */
+    --accent: 30 100% 50%;
+    --accent-foreground: 0 0% 5%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 12%;
+    --ring: 24 100% 50%;
+
+    --radius: 0.15rem; /* Sharp, tactical edges */
+
+    /* Portfolio-specific design tokens */
+    --hero-bg: 0 0% 3%;
+    --project-card: 0 0% 7%;
+    --nav-bg: 0 0% 2% / 0.95;
+    --font-display: "Rajdhani", sans-serif;
+    --font-body: "Oxanium", sans-serif;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(120deg, hsl(24 100% 50%), hsl(30 100% 50%));
+    --gradient-hero: linear-gradient(180deg, hsl(0 0% 3%), hsl(0 0% 0%));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 5%), hsl(0 0% 2%));
+    
+    /* Shadows and effects */
+    --glow-primary: 0 0 30px hsl(24 100% 50% / 0.4);
+    --glow-accent: 0 0 30px hsl(30 100% 50% / 0.4);
+    --shadow-card: 0 10px 40px hsl(0 0% 0% / 0.8);
+    --shadow-elevated: 0 20px 60px hsl(0 0% 0% / 0.9);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  :root[data-bo6-preset="muted"] {
+    --primary: 24 74% 49%;
+    --accent: 10 64% 46%;
+    --border: 24 16% 22%;
+    --ring: 24 74% 49%;
+
+    --gradient-primary: linear-gradient(120deg, hsl(24 74% 49%), hsl(10 64% 46%));
+    --glow-primary: 0 0 24px hsl(24 74% 49% / 0.24);
+    --glow-accent: 0 0 24px hsl(10 64% 46% / 0.22);
+  }
+
+  :root[data-bo6-preset="balanced"] {
+    --primary: 22 100% 55%;
+    --accent: 10 90% 54%;
+    --border: 22 22% 24%;
+    --ring: 22 100% 55%;
+
+    --gradient-primary: linear-gradient(120deg, hsl(22 100% 55%), hsl(10 90% 54%));
+    --glow-primary: 0 0 30px hsl(22 100% 55% / 0.34);
+    --glow-accent: 0 0 30px hsl(10 90% 54% / 0.32);
+  }
+
+  :root[data-bo6-preset="aggressive"] {
+    --primary: 16 100% 60%;
+    --accent: 4 96% 58%;
+    --border: 16 28% 26%;
+    --ring: 16 100% 60%;
+
+    --gradient-primary: linear-gradient(120deg, hsl(16 100% 60%), hsl(4 96% 58%));
+    --glow-primary: 0 0 36px hsl(16 100% 60% / 0.44);
+    --glow-accent: 0 0 36px hsl(4 96% 58% / 0.38);
+  }
+
+
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+    background-color: hsl(var(--background));
+    background-image:
+      radial-gradient(circle at 15% 20%, hsl(24 100% 50% / 0.08), transparent 30%),
+      radial-gradient(circle at 85% 0%, hsl(30 100% 50% / 0.08), transparent 26%),
+      repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 0, 0, 0.4) 2px, rgba(0, 0, 0, 0.4) 4px);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+    letter-spacing: 0.025em;
+  }
+}
+
+@layer utilities {
+  .hud-global-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .hud-grid-overlay {
+    background-image:
+      linear-gradient(hsl(var(--primary) / 0.07) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--primary) / 0.07) 1px, transparent 1px);
+    background-size: 38px 38px;
+    mask-image: radial-gradient(circle at center, black 36%, transparent 100%);
+    pointer-events: none;
+  }
+
+  .hud-vignette {
+    background: radial-gradient(circle at center, transparent 38%, hsl(220 35% 2% / 0.82) 100%);
+    pointer-events: none;
+  }
+
+  .hud-smoke-layer {
+    position: absolute;
+    inset: -12%;
+    background:
+      radial-gradient(circle at 25% 75%, hsl(var(--primary) / 0.14), transparent 42%),
+      radial-gradient(circle at 75% 30%, hsl(var(--accent) / 0.12), transparent 40%),
+      radial-gradient(circle at 60% 90%, hsl(var(--primary) / 0.08), transparent 44%);
+    filter: blur(44px);
+    animation: hud-smoke-shift 26s ease-in-out infinite alternate;
+    pointer-events: none;
+  }
+
+  .hud-particle {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    border-radius: 9999px;
+    background: hsl(var(--primary) / 0.92);
+    box-shadow: 0 0 14px hsl(var(--primary) / 0.78), 0 0 26px hsl(var(--accent) / 0.45);
+    animation: hud-drift 10s linear infinite;
+    pointer-events: none;
+  }
+
+  .hud-particle-sm {
+    width: 2px;
+    height: 2px;
+    opacity: 0.8;
+  }
+
+  .hud-particle-lg {
+    width: 4px;
+    height: 4px;
+    opacity: 0.95;
+  }
+
+  .hud-nav-tab {
+    position: relative;
+    border: 1px solid hsl(var(--border) / 0.7);
+    background: hsl(220 12% 12% / 0.56);
+    box-shadow: inset 0 0 0 1px hsl(var(--primary) / 0.06);
+    backdrop-filter: blur(6px);
+  }
+
+  .hud-nav-tab:hover {
+    border-color: hsl(var(--primary) / 0.54);
+    box-shadow: inset 0 0 0 1px hsl(var(--primary) / 0.14), 0 0 22px hsl(var(--primary) / 0.18);
+  }
+
+  .hud-nav-tab-active {
+    color: hsl(var(--primary-foreground));
+    background: linear-gradient(135deg, hsl(var(--primary) / 0.94), hsl(var(--accent) / 0.88));
+    border-color: hsl(var(--primary) / 0.9);
+    box-shadow: 0 0 24px hsl(var(--primary) / 0.36), inset 0 0 0 1px hsl(28 16% 95% / 0.22);
+  }
+
+  .tactical-card {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid hsl(var(--border) / 0.9);
+    background: linear-gradient(160deg, hsl(220 16% 10% / 0.96), hsl(220 18% 7% / 0.94));
+  }
+
+  .tactical-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(hsl(var(--primary)), hsl(var(--primary))) top 12px left 12px / 20px 2px no-repeat,
+      linear-gradient(90deg, hsl(var(--primary)), hsl(var(--primary))) top 12px left 12px / 2px 20px no-repeat,
+      linear-gradient(hsl(var(--primary)), hsl(var(--primary))) top 12px right 12px / 20px 2px no-repeat,
+      linear-gradient(90deg, hsl(var(--primary)), hsl(var(--primary))) top 12px right 12px / 2px 20px no-repeat,
+      linear-gradient(hsl(var(--primary)), hsl(var(--primary))) bottom 12px left 12px / 20px 2px no-repeat,
+      linear-gradient(90deg, hsl(var(--primary)), hsl(var(--primary))) bottom 12px left 12px / 2px 20px no-repeat,
+      linear-gradient(hsl(var(--primary)), hsl(var(--primary))) bottom 12px right 12px / 20px 2px no-repeat,
+      linear-gradient(90deg, hsl(var(--primary)), hsl(var(--primary))) bottom 12px right 12px / 2px 20px no-repeat;
+    opacity: 0.78;
+    pointer-events: none;
+  }
+
+  .tactical-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      180deg,
+      transparent,
+      transparent 8px,
+      hsl(var(--accent) / 0.06) 8px,
+      hsl(var(--accent) / 0.06) 10px
+    );
+    mix-blend-mode: screen;
+    opacity: 0.45;
+    animation: hud-scanline-sweep 7.5s linear infinite;
+    pointer-events: none;
+  }
+}
+
+@keyframes hud-drift {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 0.95;
+  }
+
+  85% {
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: translate3d(22px, -220px, 0) scale(0.76);
+    opacity: 0;
+  }
+}
+
+@keyframes hud-smoke-shift {
+  0% {
+    transform: translate3d(-3%, 1%, 0) scale(1);
+    opacity: 0.48;
+  }
+
+  50% {
+    transform: translate3d(3%, -2%, 0) scale(1.08);
+    opacity: 0.62;
+  }
+
+  100% {
+    transform: translate3d(-2%, 2%, 0) scale(1.02);
+    opacity: 0.46;
+  }
+}
+
+@keyframes hud-scanline-sweep {
+  0% {
+    transform: translateY(-16px);
+  }
+
+  100% {
+    transform: translateY(16px);
+  }
+}
