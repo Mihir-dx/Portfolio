@@ -2,8 +2,7 @@
 
 > **Portfolio:** Game Developer & 3D Artist  
 > **Stack:** React 18 + TypeScript + Vite + Tailwind CSS + shadcn/ui  
-> **Generated with:** Lovable AI  
-> **Date:** July 2025
+> **Date:** March 2026
 
 ---
 

@@ -25,3 +25,12 @@ dist-ssr
 .vs/
 restore-points/
 *.sock
+
+# Ignore temporary and system files
+*.tmp
+*.tmp.*
+*.bin
+*.ses
+~*.TMP
+Setup Log*.txt
+*.mp4

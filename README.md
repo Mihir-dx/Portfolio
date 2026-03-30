@@ -1,73 +1,134 @@
-# Welcome to your Lovable project
+# Mihir Kumar - Game Developer & 3D Artist Portfolio
 
-## Project info
+A professional portfolio website showcasing game development and 3D art projects. Built with modern web technologies for fast performance and smooth user experience.
 
-**URL**: https://lovable.dev/projects/85522c56-712a-42b8-8aba-fa71849591af
+## 🚀 Quick Start
 
-## How can I edit this code?
+### Prerequisites
 
-There are several ways of editing your application.
+- Node.js 16+ ([install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating))
+- Bun or npm package manager
 
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/85522c56-712a-42b8-8aba-fa71849591af) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+### Installation & Development
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Clone the repository
+git clone <YOUR_REPOSITORY_URL>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Navigate to the project directory
+cd mihir-portfolio
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Install dependencies
+npm install
+# or
+bun install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start the development server
 npm run dev
+# or
+bun dev
 ```
 
-**Edit a file directly in GitHub**
+The development server will start at `http://localhost:8080` with hot module replacement enabled.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 🛠️ Technology Stack
 
-**Use GitHub Codespaces**
+- **Framework**: React 18 with TypeScript
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS + Custom Design System
+- **UI Components**: shadcn/ui (custom curated selection)
+- **Icons**: Lucide React
+- **3D Models**: Google Model Viewer
+- **Notifications**: Sonner toast notifications
+- **Routing**: React Router v6
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 📦 Available Scripts
 
-## What technologies are used for this project?
+```sh
+# Development server
+npm run dev
 
-This project is built with:
+# Production build
+npm run build
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+# Preview production build
+npm run preview
 
-## How can I deploy this project?
+# Code linting
+npm run lint
+```
 
-Simply open [Lovable](https://lovable.dev/projects/85522c56-712a-42b8-8aba-fa71849591af) and click on Share -> Publish.
+## 📁 Project Structure
 
-## Can I connect a custom domain to my Lovable project?
+- `/src/components` - Reusable React components
+  - `/ui` - Custom shadcn/ui components
+  - `/sections` - Page section components
+- `/src/pages` - Page components
+- `/src/hooks` - Custom React hooks
+- `/src/lib` - Utility functions
+- `/src/assets` - Images and static files
+- `/public` - Public assets
 
-Yes, you can!
+## 🎨 Design System
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+The portfolio uses a professional Black Ops 6 HUD-inspired theme with:
+- **Primary Color**: Orange (hsl(24, 100%, 50%))
+- **Background**: Dark charcoal (hsl(0, 0%, 2%))
+- **Fonts**: Rajdhani (display), Oxanium (body)
+- **Sharp tactical edges** with minimal border radius
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+See `/src/index.css` for complete design token definitions.
+
+## 🚀 Deployment
+
+Build the project for production:
+
+```sh
+npm run build
+```
+
+The optimized build artifacts will be in the `/dist` directory. Deploy this folder to your hosting platform:
+
+- **Vercel**: Connect your GitHub repository to Vercel for automatic deployments
+- **Netlify**: Drop the `/dist` folder directly or connect your Git repository
+- **GitHub Pages**: Build and push the `/dist` folder to the `gh-pages` branch
+- **Custom Server**: Copy the `/dist` contents to your web server's public directory
+
+## 🔧 Development Workflow
+
+1. Create a new branch for features: `git checkout -b feature/your-feature`
+2. Make your changes
+3. Commit your work: `git commit -am 'Add feature description'`
+4. Push to your branch: `git push origin feature/your-feature`
+5. Create a Pull Request
+
+## 📝 Configuration Files
+
+- `vite.config.ts` - Vite build configuration
+- `tsconfig.json` - TypeScript compiler options
+- `tailwind.config.ts` - Tailwind CSS customization
+- `postcss.config.js` - PostCSS plugins
+- `eslint.config.js` - Code linting rules
+- `.components.json` - shadcn/ui configuration
+
+## 🐛 Troubleshooting
+
+**Port 8080 already in use?**
+```sh
+npm run dev -- --port 3000
+```
+
+**Clear build cache and reinstall:**
+```sh
+rm -rf node_modules dist
+npm install
+npm run build
+```
+
+## 📄 License
+
+Personal portfolio project. All rights reserved.
+
+---
+
+For questions or inquiries about projects, please use the contact form on the portfolio website.

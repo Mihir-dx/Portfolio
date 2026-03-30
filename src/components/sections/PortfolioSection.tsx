@@ -8,7 +8,7 @@ import littleAdventurer from "@/assets/little-adventurer.webp";
 import carAnimation from "@/assets/car-animation.webp";
 import cube4k from "@/assets/cube-4k.webp";
 import starWarsThumbnail from "@/assets/star-wars-optimized.webp";
-import artStationThumbnail from "@/assets/Rust 5.jpg";
+import artStationThumbnail from "@/assets/Rust 5.webp";
 
 type Category = "All" | "Games" | "3D Art" | "Cinematic";
 
