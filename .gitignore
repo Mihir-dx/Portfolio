@@ -34,3 +34,4 @@ restore-points/
 ~*.TMP
 Setup Log*.txt
 *.mp4
+README.md
