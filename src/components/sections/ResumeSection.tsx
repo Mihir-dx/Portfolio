@@ -24,7 +24,8 @@ const ResumeSection = () => {
     { name: "Unreal Engine Animation", url: "https://www.udemy.com/certificate/UC-026b4cfe-883f-4a29-aa2f-7e2b8dc15b39/" },
     { name: "Unity Certification", url: "https://www.cipherschools.com/certificate/preview?id=68935b71cec61f8eee566c7e" },
     { name: "Epic Games Game Design", url: "https://www.coursera.org/account/accomplishments/verify/CLSU55ACWX2O?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course" },
-    { name: "AI: Master the Basics", url: "https://courses.edx.org/certificates/ab5ee489f2324d8e99fc391d15b769de" }
+    { name: "AI: Master the Basics", url: "https://courses.edx.org/certificates/ab5ee489f2324d8e99fc391d15b769de" },
+    { name: "Unreal Engine by Epic Games", url: "https://www.coursera.org/account/accomplishments/verify/UF5D2DSK6FF7" }
   ];
 
   const { ref, isVisible } = useScrollAnimation();
