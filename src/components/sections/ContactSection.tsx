@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Mail, Phone, MapPin, Github, Linkedin, Twitter, Send, Loader2 } from "lucide-react";
+import { Github, Linkedin, Twitter, Send, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -18,24 +18,18 @@ const ContactSection = () => {
   const { toast } = useToast();
   const { ref, isVisible } = useScrollAnimation();
 
-  const contactInfo = [
+  const skills = [
     {
-      icon: Mail,
-      title: "Email",
-      content: "mihirkumar1235@gmail.com",
-      link: "mailto:mihirkumar1235@gmail.com"
+      category: "Engine / Dev",
+      items: ["Unreal Engine", "Unity", "C++", "C#"]
     },
     {
-      icon: Phone,
-      title: "Phone",
-      content: "+91 9708091968",
-      link: "tel:+919708091968"
+      category: "3D / Art",
+      items: ["Blender", "Substance Painter"]
     },
     {
-      icon: MapPin,
-      title: "Location",
-      content: "Bokaro Steel City, Jharkhand, India",
-      link: "#"
+      category: "Networking",
+      items: ["AWS GameLift"]
     }
   ];
 
@@ -222,30 +216,32 @@ const ContactSection = () => {
 
           {/* Contact Info & Social */}
           <div className="lg:col-span-2 space-y-6">
-            {/* Contact Information */}
+            {/* Skills Summary */}
             <Card className="bg-card border-border shadow-card">
               <CardHeader>
-                <CardTitle>Contact Information</CardTitle>
+                <CardTitle>Technical Skills</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
-                {contactInfo.map((info, index) => {
-                  const Icon = info.icon;
-                  return (
-                    <a
-                      key={index}
-                      href={info.link}
-                      className="flex items-center space-x-4 p-3 rounded-lg hover:bg-secondary transition-colors duration-200 group"
-                    >
-                      <div className="p-2 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors duration-200">
-                        <Icon className="text-primary" size={20} />
-                      </div>
-                      <div>
-                        <p className="text-sm text-muted-foreground">{info.title}</p>
-                        <p className="text-foreground font-medium">{info.content}</p>
-                      </div>
-                    </a>
-                  );
-                })}
+              <CardContent className="space-y-5">
+                {skills.map((skillGroup, index) => (
+                  <div key={index} className="space-y-3">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-primary rounded-full"></div>
+                      <h3 className="text-sm font-semibold text-primary uppercase tracking-wide">
+                        {skillGroup.category}
+                      </h3>
+                    </div>
+                    <div className="flex flex-wrap gap-2 pl-4">
+                      {skillGroup.items.map((skill, skillIndex) => (
+                        <span
+                          key={skillIndex}
+                          className="px-3 py-1.5 bg-primary/10 text-primary rounded-full text-sm font-medium border border-primary/20 hover:border-primary/50 hover:bg-primary/15 transition-all duration-200"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
               </CardContent>
             </Card>
 

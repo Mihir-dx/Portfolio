@@ -1,7 +1,7 @@
-# Mihir Kumar - Game Developer & 3D Artist Portfolio
-
+Mihir Kumar - Game Developer & 3D Artist Portfolio
 A professional portfolio website showcasing game development and 3D art projects. Built with modern web technologies for fast performance and smooth user experience.
 
+<<<<<<< Updated upstream
 ## 🚀 Quick Start
 
 ### Prerequisites
@@ -132,3 +132,12 @@ Personal portfolio project. All rights reserved.
 ---
 
 For questions or inquiries about projects, please use the contact form on the portfolio website.
+=======
+🛠️ Technology Stack
+Framework: React 18 with TypeScript
+Build Tool: Vite
+Styling: Tailwind CSS + Custom Design System
+UI Components: shadcn/ui (custom curated selection)
+Notifications: Sonner toast notifications
+Routing: React Router v6
+>>>>>>> Stashed changes

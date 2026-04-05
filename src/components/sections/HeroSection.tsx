@@ -34,12 +34,12 @@ const HeroSection = () => {
       <div className="absolute inset-0 z-0 overflow-hidden bg-background">
 {/* Main Background Image - Restricted to right side with fade */}
         <div 
-          className="absolute right-0 top-0 h-full w-[90%] md:w-[70%] lg:w-[60%] bg-cover bg-[20%_center] md:bg-[25%_center] bg-no-repeat opacity-60 mix-blend-screen transition-opacity duration-1000"
+          className="absolute right-0 top-0 h-full w-[90%] md:w-[70%] lg:w-[60%] bg-cover bg-[50%_50%] md:bg-[40%_60%] bg-no-repeat opacity-100 mix-blend-normal transition-opacity duration-1000"
           style={{ 
-            backgroundImage: `url('/Final Edited 2.jpg')`,
-            WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 40%, black 100%)',
-            maskImage: 'linear-gradient(to right, transparent 0%, black 40%, black 100%)',
-
+            backgroundImage: `url('/Up.jpg')`,
+            WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 100%)',
+            maskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 100%)',
+            filter: 'brightness(1.5) contrast(1.2)',
                     }}
         ></div>
 
