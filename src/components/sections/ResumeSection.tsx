@@ -42,8 +42,8 @@ const ResumeSection = () => {
           </p>
           
           <a 
-            href="/resume.pdf"
-            download="Mihir_Kumar_Resume.pdf"
+            href="/Mihir Professional CV.pdf"
+            download="Mihir_Professional_CV.pdf"
           >
             <Button 
               size="lg"
